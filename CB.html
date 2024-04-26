@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="Identity.js"></script>
+    <title>Chess Board</title>    
+    <style>
+        body {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background-image: url('ChessBG.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+        .numbers{            
+            display: flex;
+            justify-content: center;
+            width: 40px;
+            height:75px;
+            align-items: center;
+            font-weight: bolder;
+            font-size: 25px;
+        }
+        .letters{
+            display: flex;
+            justify-content: center;
+            width: 75px;
+            height:40px;
+            align-items: center;
+            font-weight: bolder;
+            font-size: 25px;
+        }
+        .board{
+            display: flex;
+            align-items: center;
+        }
+        .lsq{
+            background-color: cornflowerblue;
+            width: 75px;
+            height:75px;
+        }
+        .dsq{
+            background-color: whitesmoke;
+            width: 75px;
+            height:75px;
+        }
+        .file {
+        display: flex; 
+        align-items: center;
+        }
+        #turn {
+        position: absolute;
+        top: 45%;
+        right: 80px; 
+        transform: translateY(-50%);
+}
+        .file.names{}
+        .file.a{}
+        .file.b{}
+        .file.c{}
+        .file.d{}
+        .file.e{}
+        .file.f{}
+        .file.g{}
+        .file.h{}
+        .clicked{
+        background-color: lightblue;
+        }
+        img{
+            width: 60px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            
+    </style>
+</head>
+<body>
+    <div id="WhiteKing"></div>
+    <div id="BlackKing"></div>
+    <div class="board">
+        <div class="file">
+            <div class="names">
+                <div class="numbers">8</div>
+                <div class="numbers">7</div>
+                <div class="numbers">6</div>
+                <div class="numbers">5</div>
+                <div class="numbers">4</div>
+                <div class="numbers">3</div>
+                <div class="numbers">2</div>
+                <div class="numbers">1</div>
+            </div>
+            <div class="a">
+                <div class="dsq"><img src="BlackRook.png"alt=""></div>
+                <div class="lsq"><img src="BlackPawn.png"alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img src="WhitePawn.png"alt=""></div>
+                <div class="lsq"><img src="WhiteRook.png"alt=""></div>
+                <div class="letters">a</div>
+            </div>
+            <div class="b">
+                <div class="lsq"><img src="BlackKnight.png"alt=""></div>
+                <div class="dsq"><img src="BlackPawn.png"alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img src="WhitePawn.png"alt=""></div>
+                <div class="dsq"><img src="WhiteKnight.png"alt=""></div>
+                <div class="letters">b</div>
+            </div>
+            <div class="c">
+                <div class="dsq"><img src="BlackBishop.png"alt=""></div>
+                <div class="lsq"><img src="BlackPawn.png"alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img src="WhitePawn.png"alt=""></div>
+                <div class="lsq"><img src="WhiteBishop.png"alt=""></div>
+                <div class="letters">c</div>
+            </div>
+            <div class="d">
+                <div class="lsq"><img src="BlackQueen.png"alt=""></div>
+                <div class="dsq"><img src="BlackPawn.png"alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img src="WhitePawn.png"alt=""></div>
+                <div class="dsq"><img src="WhiteQueen.png"alt=""></div>
+                <div class="letters">d</div>
+            </div>
+            <div class="e">
+                <div class="dsq"><img src="BlackKing.png"alt=""></div>
+                <div class="lsq"><img src="BlackPawn.png"alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img src="WhitePawn.png"alt=""></div>
+                <div class="lsq"><img src="WhiteKing.png"alt=""></div>
+                <div class="letters">e</div>
+            </div>
+            <div class="f">
+                <div class="lsq"><img src="BlackBishop.png"alt=""></div>
+                <div class="dsq"><img src="BlackPawn.png"alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img src="WhitePawn.png"alt=""></div>
+                <div class="dsq"><img src="WhiteBishop.png"alt=""></div>
+                <div class="letters">f</div>
+            </div>
+            <div class="g">
+                <div class="dsq"><img src="BlackKnight.png"alt=""></div>
+                <div class="lsq"><img src="BlackPawn.png"alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img src="WhitePawn.png"alt=""></div>
+                <div class="lsq"><img src="WhiteKnight.png"alt=""></div>
+                <div class="letters">g</div>
+            </div>
+            <div class="h">
+                <div class="lsq"><img src="BlackRook.png"alt=""></div>
+                <div class="dsq"><img src="BlackPawn.png"alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img alt=""></div>
+                <div class="dsq"><img alt=""></div>
+                <div class="lsq"><img src="WhitePawn.png"alt=""></div>
+                <div class="dsq"><img src="WhiteRook.png"alt=""></div>
+                <div class="letters">h</div>
+            </div>
+        </div>
+    </div>
+    <div id="turn"><h1>White to Move</h1></div>
+</body>
+</html>
